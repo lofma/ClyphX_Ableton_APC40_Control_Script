@@ -1,0 +1,15 @@
+If you should have a problem using the installers we provide, you can perform a manual setup using the following procedure:
+
+1.  Close Live.
+2.  Go into the folder named MIDI Remote Scripts and copy all of the folders it contains.  Paste these folders into Live's 
+    MIDI Remote Scripts directory.
+3.  Relaunch Live.
+4.  Refer to the ClyphX Pro User Manual for information on how to set up and use this accessory.
+
+
+To access the Live directory mentioned above:
+
+On Windows, go to: ProgramData\Ableton\Live x\Resources
+
+On OS X, go to Applications, find Live.app or Ableton Live x.app, Control-click or right click on it and
+select Show Package Contents and then go to: Contents/App-Resources

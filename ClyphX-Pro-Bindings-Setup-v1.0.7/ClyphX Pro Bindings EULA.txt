@@ -1,0 +1,54 @@
+END-USER LICENSE AGREEMENT FOR THE NATIVEKONTROL CLYPHX PRO BINDINGS LIBRARY.
+
+PLEASE READ THE TERMS AND CONDITIONS OF THIS LICENSE AGREEMENT CAREFULLY BEFORE CONTINUING WITH THIS PROGRAM INSTALL.
+
+This End-User License Agreement (referred to as "EULA") is a legal agreement between an individual or a single entity (referred to as "LICENSEE") and nativeKONTROL for the nativeKONTROL software product(s) identified above which may include associated software components, media, printed materials, and "online" or electronic documentation (referred to as "SOFTWARE PRODUCT"). By installing, copying, or otherwise using the SOFTWARE PRODUCT, the LICENSEE agrees to be bound by the terms of this EULA. 
+
+This EULA represents the entire agreement concerning the program between the LICENSEE and nativeKONTROL and it supersedes any prior proposal, representation, or understanding between the parties. If the LICENSEE does not agree to the terms of this EULA, the LICENSEE should not install or use the SOFTWARE PRODUCT. 
+
+The SOFTWARE PRODUCT is protected by copyright laws and international copyright treaties, as well as other intellectual property laws and treaties. The SOFTWARE PRODUCT is licensed, not sold. 
+
+1. GRANT OF LICENSE. 
+
+The SOFTWARE PRODUCT is licensed as follows: 
+
+(a) Installation and Use.
+Providing that the LICENSEE has paid any applicable license fees, nativeKONTROL grants the LICENSEE the right to install and use copies of the SOFTWARE PRODUCT on up to two computers in the LICENSEE's possession that are running a validly licensed copy of the operating system for which the SOFTWARE PRODUCT was designed [e.g., Windows XP, Windows ME, Windows Vista].  The computer(s) must be owned by the LICENSEE.  
+
+(b) Backup Copies.
+The LICENSEE may also make copies of the SOFTWARE PRODUCT as may be necessary for backup and archival purposes.
+
+2. DESCRIPTION OF OTHER RIGHTS AND LIMITATIONS.
+
+(a) Maintenance of Copyright Notices.
+The LICENSEE must not remove or alter any copyright notices on any and all copies of the SOFTWARE PRODUCT.
+
+(b) Distribution.
+The LICENSEE may not distribute registered copies of the SOFTWARE PRODUCT to third parties. 
+
+(c) Prohibition on Reverse Engineering, Decompilation, and Disassembly.
+The LICENSEE may not reverse engineer, decompile, or disassemble the SOFTWARE PRODUCT, except and only to the extent that such activity is expressly permitted by applicable law notwithstanding this limitation. 
+
+(d) Rental.
+The LICENSEE may not rent, lease, or lend the SOFTWARE PRODUCT.
+
+(e) License transfer
+nativeKONTROL may allow the LICENSEE to transfer their license to the SOFTWARE PRODUCT to a third party.  The LICENSEE must contact nativeKONTROL (support@nativekontrol.com) to request such a transfer and nativeKONTROL reserves the right to deny the request.  In the event that the request is accepted, the LICENSEE must destroy all copies of the SOFTWARE PRODUCT in the LICENSEE's possession.  
+
+(f) Support Services.
+nativeKONTROL may provide the LICENSEE with support services related to the SOFTWARE PRODUCT. Any supplemental software code provided to the LICENSEE as part of the Support Services shall be considered part of the SOFTWARE PRODUCT and subject to the terms and conditions of this EULA. 
+
+(g) Compliance with Applicable Laws.
+The LICENSEE must comply with all applicable laws regarding use of the SOFTWARE PRODUCT.
+
+3. TERMINATION 
+Without prejudice to any other rights, nativeKONTROL may terminate this EULA if the LICENSEE fails to comply with the terms and conditions of this EULA. In such event, the LICENSEE must destroy all copies of the SOFTWARE PRODUCT in the LICENSEE's possession.
+
+4. COPYRIGHT
+All title, including but not limited to copyrights, in and to the SOFTWARE PRODUCT and any copies thereof are owned by nativeKONTROL or its suppliers. All title and intellectual property rights in and to the content which may be accessed through use of the SOFTWARE PRODUCT is the property of the respective content owner and may be protected by applicable copyright or other intellectual property laws and treaties. This EULA grants the LICENSEE no rights to use such content. All rights not expressly granted are reserved by nativeKONTROL. 
+
+5. NO WARRANTIES
+nativeKONTROL expressly disclaims any warranty for the SOFTWARE PRODUCT. The SOFTWARE PRODUCT is provided 'As Is' without any express or implied warranty of any kind, including but not limited to any warranties of merchantability, noninfringement, or fitness of a particular purpose. nativeKONTROL does not warrant or assume responsibility for the accuracy or completeness of any information, text, graphics, links or other items contained within the SOFTWARE PRODUCT. nativeKONTROL makes no warranties respecting any harm that may be caused by the transmission of a computer virus, worm, time bomb, logic bomb, or other such computer program. nativeKONTROL further expressly disclaims any warranty or representation to the LICENSEE or to any third party.
+
+6. LIMITATION OF LIABILITY
+In no event shall nativeKONTROL  be liable for any damages (including, without limitation, lost profits, business interruption, or lost information) rising out of the LICENSEE's use of or inability to use the SOFTWARE PRODUCT, even if nativeKONTROL has been advised of the possibility of such damages. In no event will nativeKONTROL be liable for loss of data or for indirect, special, incidental, consequential (including lost profit), or other damages based in contract, tort or otherwise. nativeKONTROL shall have no liability with respect to the content of the SOFTWARE PRODUCT or any part thereof, including but not limited to errors or omissions contained therein, libel, infringements of rights of publicity, privacy, trademark rights, business interruption, personal injury, loss of privacy, moral rights or the disclosure of confidential information.  

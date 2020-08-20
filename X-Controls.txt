@@ -1,0 +1,163 @@
+#********************************** [SETTINGS NOTES] **********************************
+
+# Please DO NOT change any of the spacing in this file.
+
+# Please DO NOT change the name of this file or its file extension.  When done making
+# your changes to the settings below, just save the file.
+
+# After saving this file, you will need to load a new Live Set/reload the
+# current Live Set for your changes to take effect.
+
+
+
+# --------------------------------------------------------------------------------------
+
+[X-CONTROLS]
+
+# Below, you can specify a list of MIDI Controls to use as X-Controls.
+
+# The entry format is: NAME = TYPE, CHANNEL, NOTE_OR_CC, OFF_LED, ON_LED, ON_ACTION_LIST
+
+# --------------------------------------------------------------------------------------
+# | ENTRY          |  DESCRIPTION
+# --------------------------------------------------------------------------------------
+# | NAME           |  A unique one-word name for the control.
+# --------------------------------------------------------------------------------------
+# | TYPE           |  The type of MIDI message the control sends (NOTE or CC).
+# --------------------------------------------------------------------------------------
+# | CHANNEL        |  The MIDI Channel number in the range of 1-16
+# --------------------------------------------------------------------------------------
+# | NOTE_OR_CC     |  The Note or CC number in the range of 0-127.
+# --------------------------------------------------------------------------------------
+# | OFF_LED        |  The LED value in the range of 0-127 to use by default and when the
+# |                |  control sends an off message. If in doubt, use 0.
+# --------------------------------------------------------------------------------------
+# | ON_LED         |  The LED value in the range of 0-127 to use when the control sends
+# |                |  an on message. If in doubt, use 127.
+# --------------------------------------------------------------------------------------
+# | ON_ACTION_LIST |  The Action List to trigger when the control sends an on message.
+# --------------------------------------------------------------------------------------
+
+# Example: MY_BTN1 = NOTE, 1, 10, 0, 127, 1/MUTE ; 2/MUTE
+
+# You can optionally specify an Action List to trigger when the control sends an off
+# message. To do this, place a colon after the On Action List and then specify the
+# Off Action List.
+
+# Example: MY_BTN2 = CC, 16, 117, 0, 127, 1/MUTE ; 2/MUTE : 3/PLAY >
+
+# To trigger the same Action List for the On Action List and Off Action List, just specify
+# an asterisk for the Off Action List.
+
+# Example: MY_BTN3 = NOTE, 5, 0, 0, 127, 1/MUTE : *
+
+# --------------------------------------------------------------------------------------
+
+# Below is an example list that has been commented out (the # at the beginning of
+# a line makes the line a comment). Your list should be formatted in the same way
+# except without the # at the beginning of each line.
+
+# BTN_1 = NOTE, 1, 0, 0, 127, MUTE : *
+
+# BTN_2 = NOTE, 1, 1, 25, 15, SOLO
+
+# BTN_3 = CC, 9, 2, 127, 0, ARM
+
+# When using long Action Lists, it's possible to split the Action List up over multiple
+# lines.  This requires that each additional line is indented by 1 space.
+
+# BTN_4 = CC, 9, 3, 1, 5,
+#  MON;
+#  ARM;
+#  NAME "My Track"
+
+# --------------------------------------------------------------------------------------
+livelooper_1_record = cc, 3, 55, 0, 127, "livelooper1"/play 1; "livelooper1"/vol reset
+
+livelooper_1_delete = cc, 3, 8, 0, 127, 
+ "livelooper1"/COPYCLIP 4;
+ "livelooper1"/PASTECLIP 5;
+ "livelooper1"/COPYCLIP 3;
+ "livelooper1"/PASTECLIP 4;
+ "livelooper1"/COPYCLIP 2;
+ "livelooper1"/PASTECLIP 3;
+ "livelooper1"/COPYCLIP 1;
+ "livelooper1"/PASTECLIP 2;
+ "livelooper1"/clip(1) del; "livelooper1"/vol ramps 1b 0
+
+livelooper_1_quantisieren_16tel_30% = cc, 3, 19, 0, 127, "livelooper1"/CLIP(1) QNTZ 1/16 30
+#livelooper_1_quantisieren_16tel_30% = cc, 3, 19, 0, 127, "livelooper1"/arm off
+
+##### looper template
+
+#looper_*_record = cc, 3, 55, 0, 127, "looper*"/arm on; "looper*"/play 1
+
+#looper_*_delete = cc, 3, 8, 0, 127, "looper*"/COPYCLIP 4; "looper*"/PASTECLIP 5; "looper*"/COPYCLIP 3; "looper*"/PASTECLIP 4; "looper*"/COPYCLIP 2; "looper*"/PASTECLIP 3; "looper*"/COPYCLIP 1; "looper*"/PASTECLIP 2; "looper*"/clip(1) del;
+
+#looper_*_quantisieren_16tel_30% = cc, 3, 19, 0, 127, "livelooper1"/CLIP(1) QNTZ 1/16 30
+
+##### looper 1
+
+looper_1_record = cc, 3, 16, 0, 127, (PSEQ) 
+ {"looper1"/CLIP(1) del; MIDI CC 3 92 0; MIDI CC 3 93 0; MIDI CC 3 94 0};
+ {"looper1"/play 1; "looper1"/vol reset; MIDI CC 3 92 30; MIDI CC 3 93 0; MIDI CC 3 94 0}; 
+ {"looper1"/play 1; "looper1"/vol reset; MIDI CC 3 92 127; MIDI CC 3 93 0; MIDI CC 3 94 0}
+
+looper_1_volume0 = cc, 3, 3, 0, 127, "looper1"/vol 0
+
+looper_1_quantisieren_16tel_30% = cc, 3, 58, 0, 127, "livelooper1"/CLIP(1) QNTZ 1/16 30
+
+looper_1_saveclip = cc, 3, 96, 0, 127, (PSEQ) {"looper1"/COPYCLIP 1; "looper1"/PASTECLIP 2;  MIDI CC 3 94 127; wait 10; "looper1"/CLIP(1) COLOR 70; "looper1"/CLIP(2) COLOR 20}; 
+ {"looper1"/COPYCLIP 1; "looper1"/PASTECLIP 3; MIDI CC 3 94 127; wait 10; "looper1"/CLIP(1) COLOR 70; "looper1"/CLIP(3) COLOR 22}; 
+ {"looper1"/COPYCLIP 1; "looper1"/PASTECLIP 4; MIDI CC 3 94 127; wait 10; "looper1"/CLIP(1) COLOR 70; "looper1"/CLIP(4) COLOR 24}; 
+ {"looper1"/COPYCLIP 1; "looper1"/PASTECLIP 5; MIDI CC 3 94 127; wait 10; "looper1"/CLIP(1) COLOR 70; "looper1"/CLIP(5) COLOR 26}; 
+ {"looper1"/COPYCLIP 1; "looper1"/PASTECLIP 6; MIDI CC 3 94 127; wait 10; "looper1"/CLIP(1) COLOR 70; "looper1"/CLIP(6) COLOR 28};
+ {"looper1"/COPYCLIP 1; "looper1"/PASTECLIP 7; MIDI CC 3 94 127; wait 10; "looper1"/CLIP(1) COLOR 70; "looper1"/CLIP(7) COLOR 30};  
+ {"looper1"/COPYCLIP 1; "looper1"/PASTECLIP 8; MIDI CC 3 94 127; wait 10; "looper1"/CLIP(1) COLOR 70; "looper1"/CLIP(8) COLOR 32}; 
+ {"looper1"/COPYCLIP 1; "looper1"/PASTECLIP 9; MIDI CC 3 94 127; wait 10; "looper1"/CLIP(1) COLOR 70; "looper1"/CLIP(9) COLOR 34}; 
+ {"looper1"/COPYCLIP 1; "looper1"/PASTECLIP 10; MIDI CC 3 94 127; wait 10; "looper1"/CLIP(1) COLOR 70; "looper1"/CLIP(10) COLOR 36} 
+ {"looper1"/COPYCLIP 1; "looper1"/PASTECLIP 2; MIDI CC 3 94 127; wait 10; "looper1"/CLIP(1) COLOR 70; "looper1"/CLIP(2) COLOR 35}; 
+ {"looper1"/COPYCLIP 1; "looper1"/PASTECLIP 3; MIDI CC 3 94 127; wait 10; "looper1"/CLIP(1) COLOR 70; "looper1"/CLIP(3) COLOR 37}; 
+ {"looper1"/COPYCLIP 1; "looper1"/PASTECLIP 4; MIDI CC 3 94 127; wait 10; "looper1"/CLIP(1) COLOR 70; "looper1"/CLIP(4) COLOR 39}; 
+ {"looper1"/COPYCLIP 1; "looper1"/PASTECLIP 5; MIDI CC 3 94 127; wait 10; "looper1"/CLIP(1) COLOR 70; "looper1"/CLIP(5) COLOR 41}; 
+ {"looper1"/COPYCLIP 1; "looper1"/PASTECLIP 6; MIDI CC 3 94 127; wait 10; "looper1"/CLIP(1) COLOR 70; "looper1"/CLIP(6) COLOR 43};
+ {"looper1"/COPYCLIP 1; "looper1"/PASTECLIP 7; MIDI CC 3 94 127; wait 10; "looper1"/CLIP(1) COLOR 70; "looper1"/CLIP(7) COLOR 45};  
+ {"looper1"/COPYCLIP 1; "looper1"/PASTECLIP 8; MIDI CC 3 94 127; wait 10; "looper1"/CLIP(1) COLOR 70; "looper1"/CLIP(8) COLOR 47}; 
+ {"looper1"/COPYCLIP 1; "looper1"/PASTECLIP 9; MIDI CC 3 94 127; wait 10; "looper1"/CLIP(1) COLOR 70; "looper1"/CLIP(9) COLOR 49}; 
+ {"looper1"/COPYCLIP 1; "looper1"/PASTECLIP 10; MIDI CC 3 94 127; wait 10; "looper1"/CLIP(1) COLOR 70; "looper1"/CLIP(10) COLOR 51} 
+
+
+looper_1_playrndclip = cc, 3, 97, 0, 127, 
+ "looper1"/PLAY RNDC2-10; 
+ MIDI CC 3 92 0; MIDI CC 3 93 127; MIDI CC 3 94 0
+
+##### looper 2
+
+looper_2_record = cc, 3, 23, 0, 127, "looper2"/play 1; "looper2"/vol reset
+
+looper_2_delete = cc, 3, 6, 0, 127, "looper2"/COPYCLIP 4; "looper2"/PASTECLIP 5; "looper2"/COPYCLIP 3; "looper2"/PASTECLIP 4; "looper2"/COPYCLIP 2; "looper2"/PASTECLIP 3; "looper2"/COPYCLIP 1; "looper2"/PASTECLIP 2; "looper2"/clip(1) del; "looper2"/vol ramps 1b 0
+
+looper_2_quantisieren_16tel_30% = cc, 3, 59, 0, 127, "livelooper1"/CLIP(1) QNTZ 1/16 30
+
+##### looper 3
+
+looper_3_record = cc, 3, 24, 0, 127, "looper3"/play 1; "looper3"/vol reset
+
+looper_3_delete = cc, 3, 11, 0, 127, "looper3"/COPYCLIP 4; "looper3"/PASTECLIP 5; "looper3"/COPYCLIP 3; "looper3"/PASTECLIP 4; "looper3"/COPYCLIP 2; "looper3"/PASTECLIP 3; "looper3"/COPYCLIP 1; "looper3"/PASTECLIP 2; "looper3"/clip(1) del; "looper3"/vol ramps 1b 0
+
+looper_3_quantisieren_16tel_30% = cc, 3, 60, 0, 127, "livelooper1"/CLIP(1) QNTZ 1/16 30
+
+##### looper 4
+
+looper_4_record = cc, 3, 20, 0, 127, "looper4"/play 1; "looper4"/vol reset
+
+looper_4_delete = cc, 3, 14, 0, 127, "looper4"/COPYCLIP 4; "looper4"/PASTECLIP 5; "looper4"/COPYCLIP 3; "looper4"/PASTECLIP 4; "looper4"/COPYCLIP 2; "looper4"/PASTECLIP 3; "looper4"/COPYCLIP 1; "looper4"/PASTECLIP 2; "looper4"/clip(1) del; "looper4"/vol ramps 1b 0
+
+looper_4_quantisieren_16tel_30% = cc, 3, 61, 0, 127, "livelooper1"/CLIP(1) QNTZ 1/16 30
+
+#### globale quantisierung
+
+#quantisierung1/4 = cc, 3, 44, 0, 127, GQ 1/4
+#quantisierung1/4T = cc, 3, 45, 0, 127, GQ 1/4T
+#quantisierungnone = cc, 3, 46, 0, 127, GQ none
+#quantisierung1bar = cc, 3, 43, 0, 127, GQ 1 bar

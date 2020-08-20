@@ -1,0 +1,155 @@
+#********************************** [SETTINGS NOTES] **********************************
+
+# Please DO NOT change any of the spacing in this file.
+
+# Please DO NOT change the name of this file or its file extension.  When done making
+# your changes to the settings below, just save the file.
+
+# After saving this file, you will need to load a new Live Set/reload the
+# current Live Set for your changes to take effect.
+
+
+
+# --------------------------------------------------------------------------------------
+
+[X-CONTROLS]
+
+# Below, you can specify a list of MIDI Controls to use as X-Controls.
+
+# The entry format is: NAME = TYPE, CHANNEL, NOTE_OR_CC, OFF_LED, ON_LED, ON_ACTION_LIST
+
+# --------------------------------------------------------------------------------------
+# | ENTRY          |  DESCRIPTION
+# --------------------------------------------------------------------------------------
+# | NAME           |  A unique one-word name for the control.
+# --------------------------------------------------------------------------------------
+# | TYPE           |  The type of MIDI message the control sends (NOTE or CC).
+# --------------------------------------------------------------------------------------
+# | CHANNEL        |  The MIDI Channel number in the range of 1-16
+# --------------------------------------------------------------------------------------
+# | NOTE_OR_CC     |  The Note or CC number in the range of 0-127.
+# --------------------------------------------------------------------------------------
+# | OFF_LED        |  The LED value in the range of 0-127 to use by default and when the
+# |                |  control sends an off message. If in doubt, use 0.
+# --------------------------------------------------------------------------------------
+# | ON_LED         |  The LED value in the range of 0-127 to use when the control sends
+# |                |  an on message. If in doubt, use 127.
+# --------------------------------------------------------------------------------------
+# | ON_ACTION_LIST |  The Action List to trigger when the control sends an on message.
+# --------------------------------------------------------------------------------------
+
+# Example: MY_BTN1 = NOTE, 1, 10, 0, 127, 1/MUTE ; 2/MUTE
+
+# You can optionally specify an Action List to trigger when the control sends an off
+# message. To do this, place a colon after the On Action List and then specify the
+# Off Action List.
+
+# Example: MY_BTN2 = CC, 16, 117, 0, 127, 1/MUTE ; 2/MUTE : 3/PLAY >
+
+# To trigger the same Action List for the On Action List and Off Action List, just specify
+# an asterisk for the Off Action List.
+
+# Example: MY_BTN3 = NOTE, 5, 0, 0, 127, 1/MUTE : *
+
+# --------------------------------------------------------------------------------------
+
+# Below is an example list that has been commented out (the # at the beginning of
+# a line makes the line a comment). Your list should be formatted in the same way
+# except without the # at the beginning of each line.
+
+# BTN_1 = NOTE, 1, 0, 0, 127, MUTE : *
+
+# BTN_2 = NOTE, 1, 1, 25, 15, SOLO
+
+# BTN_3 = CC, 9, 2, 127, 0, ARM
+
+# When using long Action Lists, it's possible to split the Action List up over multiple
+# lines.  This requires that each additional line is indented by 1 space.
+
+# BTN_4 = CC, 9, 3, 1, 5,
+#  MON;
+#  ARM;
+#  NAME "My Track"
+
+# --------------------------------------------------------------------------------------
+
+# >>>>>>>> DELETE THIS ENTIRE LINE AND START YOUR LIST HERE <<<<<<<<
+
+inputSelect_1 = note, 1, 82, 1, 5, "input_1"/vol ramps 2 100; "input_2"/vol ramps 2 0; "input_3"/vol ramps 2 0; "input_4"/vol ramps 2 0; "input_5"/vol ramps 2 0
+inputSelect_2 = note, 1, 83, 1, 5, "input_2"/vol ramps 2 100; "input_1"/vol ramps 2 0; "input_3"/vol ramps 2 0; "input_4"/vol ramps 2 0; "input_5"/vol ramps 2 0
+inputSelect_3 = note, 1, 84, 1, 5, "input_3"/vol ramps 2 100; "input_1"/vol ramps 2 0; "input_2"/vol ramps 2 0; "input_4"/vol ramps 2 0; "input_5"/vol ramps 2 0
+inputSelect_4 = note, 1, 85, 1, 5, "input_4"/vol ramps 2 100; "input_1"/vol ramps 2 0; "input_2"/vol ramps 2 0; "input_3"/vol ramps 2 0; "input_5"/vol ramps 2 0
+inputSelect_5 = note, 1, 86, 1, 5, "input_5"/vol ramps 2 100; "input_1"/vol ramps 2 0; "input_2"/vol ramps 2 0; "input_3"/vol ramps 2 0; "input_4"/vol ramps 2 0
+
+effectOn_1-1 = Note, 1, 53, 1, 5, %x% = 1; %y% = 1; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_1-2 = Note, 1, 54, 1, 5, %x% = 1; %y% = 2; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_1-3 = Note, 1, 55, 1, 5, %x% = 1; %y% = 3; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_1-4 = Note, 1, 56, 1, 5, %x% = 1; %y% = 4; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_1-5 = Note, 1, 57, 1, 5, %x% = 1; %y% = 5; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_1-6 = Note, 1, 58, 1, 5, %x% = 1; %y% = 6; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_1-7 = Note, 1, 59, 1, 5, %x% = 1; %y% = 7; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_1-8 = Note, 1, 60, 1, 5, %x% = 1; %y% = 8; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_2-1 = Note, 2, 53, 1, 5, %x% = 2; %y% = 1; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_2-2 = Note, 2, 54, 1, 5, %x% = 2; %y% = 2; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_2-3 = Note, 2, 55, 1, 5, %x% = 2; %y% = 3; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_2-4 = Note, 2, 56, 1, 5, %x% = 2; %y% = 4; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_2-5 = Note, 2, 57, 1, 5, %x% = 2; %y% = 5; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_2-6 = Note, 2, 58, 1, 5, %x% = 2; %y% = 6; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_2-7 = Note, 2, 59, 1, 5, %x% = 2; %y% = 7; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_2-8 = Note, 2, 60, 1, 5, %x% = 2; %y% = 8; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_3-1 = Note, 3, 53, 1, 5, %x% = 3; %y% = 1; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_3-2 = Note, 3, 54, 1, 5, %x% = 3; %y% = 2; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_3-3 = Note, 3, 55, 1, 5, %x% = 3; %y% = 3; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_3-4 = Note, 3, 56, 1, 5, %x% = 3; %y% = 4; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_3-5 = Note, 3, 57, 1, 5, %x% = 3; %y% = 5; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_3-6 = Note, 3, 58, 1, 5, %x% = 3; %y% = 6; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_3-7 = Note, 3, 59, 1, 5, %x% = 3; %y% = 7; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_3-8 = Note, 3, 60, 1, 5, %x% = 3; %y% = 8; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_4-1 = Note, 4, 53, 1, 5, %x% = 4; %y% = 1; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_4-2 = Note, 4, 54, 1, 5, %x% = 4; %y% = 2; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_4-3 = Note, 4, 55, 1, 5, %x% = 4; %y% = 3; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_4-4 = Note, 4, 56, 1, 5, %x% = 4; %y% = 4; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_4-5 = Note, 4, 57, 1, 5, %x% = 4; %y% = 5; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_4-6 = Note, 4, 58, 1, 5, %x% = 4; %y% = 6; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_4-7 = Note, 4, 59, 1, 5, %x% = 4; %y% = 7; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_4-8 = Note, 4, 60, 1, 5, %x% = 4; %y% = 8; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_5-1 = Note, 5, 53, 1, 5, %x% = 5; %y% = 1; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_5-2 = Note, 5, 54, 1, 5, %x% = 5; %y% = 2; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_5-3 = Note, 5, 55, 1, 5, %x% = 5; %y% = 3; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_5-4 = Note, 5, 56, 1, 5, %x% = 5; %y% = 4; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_5-5 = Note, 5, 57, 1, 5, %x% = 5; %y% = 5; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_5-6 = Note, 5, 58, 1, 5, %x% = 5; %y% = 6; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_5-7 = Note, 5, 59, 1, 5, %x% = 5; %y% = 7; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_5-8 = Note, 5, 60, 1, 5, %x% = 5; %y% = 8; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_6-1 = Note, 6, 53, 1, 5, %x% = 6; %y% = 1; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_6-2 = Note, 6, 54, 1, 5, %x% = 6; %y% = 2; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_6-3 = Note, 6, 55, 1, 5, %x% = 6; %y% = 3; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_6-4 = Note, 6, 56, 1, 5, %x% = 6; %y% = 4; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_6-5 = Note, 6, 57, 1, 5, %x% = 6; %y% = 5; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_6-6 = Note, 6, 58, 1, 5, %x% = 6; %y% = 6; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_6-7 = Note, 6, 59, 1, 5, %x% = 6; %y% = 7; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_6-8 = Note, 6, 60, 1, 5, %x% = 6; %y% = 8; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_7-1 = Note, 7, 53, 1, 5, %x% = 7; %y% = 1; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_7-2 = Note, 7, 54, 1, 5, %x% = 7; %y% = 2; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_7-3 = Note, 7, 55, 1, 5, %x% = 7; %y% = 3; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_7-4 = Note, 7, 56, 1, 5, %x% = 7; %y% = 4; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_7-5 = Note, 7, 57, 1, 5, %x% = 7; %y% = 5; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_7-6 = Note, 7, 58, 1, 5, %x% = 7; %y% = 6; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_7-7 = Note, 7, 59, 1, 5, %x% = 7; %y% = 7; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_7-8 = Note, 7, 60, 1, 5, %x% = 7; %y% = 8; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_8-1 = Note, 8, 53, 1, 5, %x% = 8; %y% = 1; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_8-2 = Note, 8, 54, 1, 5, %x% = 8; %y% = 2; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_8-3 = Note, 8, 55, 1, 5, %x% = 8; %y% = 3; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_8-4 = Note, 8, 56, 1, 5, %x% = 8; %y% = 4; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_8-5 = Note, 8, 57, 1, 5, %x% = 8; %y% = 5; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_8-6 = Note, 8, 58, 1, 5, %x% = 8; %y% = 6; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_8-7 = Note, 8, 59, 1, 5, %x% = 8; %y% = 7; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOn_8-8 = Note, 8, 60, 1, 5, %x% = 8; %y% = 8; %x%/dev(%y%.1) sel; %x%/dev(%y%) on
+effectOff_1 = note, 1, 52, 1, 5, 1/dev(%y%) off
+effectOff_2 = note, 2, 52, 1, 5, 2/dev(%y%) off
+effectOff_3 = note, 3, 52, 1, 5, 3/dev(%y%) off
+effectOff_4 = note, 4, 52, 1, 5, 4/dev(%y%) off
+effectOff_5 = note, 5, 52, 1, 5, 5/dev(%y%) off
+effectOff_6 = note, 6, 52, 1, 5, 6/dev(%y%) off
+effectOff_7 = note, 7, 52, 1, 5, 7/dev(%y%) off
+effectOff_8 = note, 8, 52, 1, 5, 8/dev(%y%) off

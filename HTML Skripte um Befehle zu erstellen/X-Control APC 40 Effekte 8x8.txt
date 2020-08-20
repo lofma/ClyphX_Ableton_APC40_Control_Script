@@ -1,0 +1,28 @@
+<html>
+<body>
+
+<p id="demo"></p>
+
+
+
+</body>
+</html>
+
+<script>
+let arrayEffects = []
+const text = (x, y) => {return `Effect_${x}-${y} = Note, ${x}, ${y + 52}, 1, 5, %x% = ${x}; %y% = ${y}; %x%/dev(%y%.1) sel; %x%/dev(%y%) on` }
+
+console.log(text (1, 2, 1))
+
+const lalafunction = (i) => i
+
+
+for (let i = 1; i <= 8; i ++) {
+  for (let j = 1; j <= 8; j ++) {
+    arrayEffects.push(text(i, j))
+  }
+  
+}
+
+document.getElementById("demo").innerHTML = arrayEffects.join("<br />")
+</script>
