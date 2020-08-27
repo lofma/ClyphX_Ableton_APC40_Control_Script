@@ -1,0 +1,103 @@
+<html>
+<body>
+  <h2>#Looper</h2>
+  <p id="looper-arm-on"></p>
+  <p id="looper-record"></p>
+   <h2>#Input select (manuelles editen notwendig oder anpassen des befehls!!)</h2>
+  inputSelect_1 = note, 1, 82, 1, 5, "input_1"/vol ramps 2 100; "input_2"/vol ramps 2 0; "input_3"/vol ramps 2 0; "input_4"/vol ramps 2 0; "input_5"/vol ramps 2 0 <br/>
+inputSelect_2 = note, 1, 83, 1, 5, "input_2"/vol ramps 2 100; "input_1"/vol ramps 2 0;  "input_3"/vol ramps 2 0; "input_4"/vol ramps 2 0; "input_5"/vol ramps 2 0 <br/>
+inputSelect_3 = note, 1, 84, 1, 5, "input_3"/vol ramps 2 100; "input_1"/vol ramps 2 0; "input_2"/vol ramps 2 0;  "input_4"/vol ramps 2 0; "input_5"/vol ramps 2 0 <br/>
+inputSelect_4 = note, 1, 85, 1, 5, "input_4"/vol ramps 2 100; "input_1"/vol ramps 2 0; "input_2"/vol ramps 2 0; "input_3"/vol ramps 2 0;  "input_5"/vol ramps 2 0 <br/>
+inputSelect_5 = note, 1, 86, 1, 5, "input_5"/vol ramps 2 100; "input_1"/vol ramps 2 0; "input_2"/vol ramps 2 0; "input_3"/vol ramps 2 0; "input_4"/vol ramps 2 0 <br/>
+   <p id="input-select"></p>
+  <h2>#Control Sends</h2>
+   <p id="sends"></p>
+  <h2>#Switch on Effects</h2>
+    <p id="effects-on"></p>
+  <h2>#Switch off Effects</h2>
+   <p id="effects-off"></p>
+ 
+  
+</body>
+</html>
+
+<script>
+//button select looper -> arm on dry track
+
+  
+
+  // Befehle
+  const looperStart = (x) => `looperSelect_${x} =  %looper% = ${x}; `
+  const looperDryCommand = (x) => `"looper_${x}_dry"/arm on`
+  const looperOthersOffCommand = (x) => `"looper_${x}_dry"/ arm off; "looper_${x}_wet"/arm off`
+  const totalLoopers = 4
+
+  // Arm off
+  let looperOthersOffArray = [] 
+  for (let i=1; i<= totalLoopers; i++){
+      looperOthersOffArray.push(looperOthersOffCommand(i))
+  }
+
+  //Arm off + Arm on
+  let looperDryOnArray = []
+  for (let i=1; i<= totalLoopers; i++) {
+      looperDryOnArray.push(looperStart(i) + looperOthersOffArray.join("; ") + "; " + looperDryCommand(i))  
+  }
+  document.getElementById("looper-arm-on").innerHTML = looperDryOnArray.join("<br />") 
+
+//Looper: Record dry or wet
+  const recordLooper = `looper-record = "looper_%looper%_dry"/play 1; "looper_%looper%_wet/play 1"/play 1`
+  document.getElementById("looper-record").innerHTML = recordLooper
+  
+//Input Select, Effekte, Sends
+const inputSelect = (z) => {
+  return `#inputSelect_${z} = note, 1, ${z+81}, 1, 5, "input_${z}"/vol ramps 2 100; "input_${1}"/vol ramps 2 0; "input_${2}"/vol ramps 2 0; "input_${3}"/vol ramps 2 0; "input_${4}"/vol ramps 2 0; "input_${5}"/vol ramps 2 0`
+} 
+const effectOff = (z) => {
+  return `effectOff_${z} = note, ${z}, 52, 1, 5, ${z}/dev(%y%) off`
+}  
+const effectOn = (x, y) => {
+  return `effectOn_${x}-${y} = Note, ${x}, ${y + 52}, 1, 5, %x% = ${x}; %y% = ${y}; %x%/dev(%y%.1) sel; %x%/dev(%y%) on` 
+}
+const sends = (x) => {
+  return `#sends_${x}-C = cc, ${x}, 23, 1, 5, (pseq) ${x}/send c ramps 2 100%; ${x}/send c ramps 2 0%<br/>
+          #sends_${x}-B = Note, ${x}, 50, 1, 5, ${x}/send b ramps 2 100%, ${x}/send a ramps 2 0%<br/>
+          #sends_${x}-A-50 = Note, ${x}, 49, 1, 5, ${x}/send a ramps 2 50%; ${x}/send b ramps 2 50% <br/>
+          #sends_${x}-A-100 = Note, ${x}, 48, 1, 5, ${x}/send a ramps 2 100%; ${x}/send b ramps 2 100% <br />
+` 
+}
+
+//input select
+let arrayInput = []
+for (let i = 1; i <= 5; i ++) {
+    arrayInput.push(inputSelect(i))
+}
+document.getElementById("input-select").innerHTML = arrayInput.join("<br />")
+  
+//Change sends SendA,SendB,SendC. SendC is dry signal
+let arraySends = []
+for (let k = 1; k <= 8; k ++) {
+  
+    arraySends.push(sends(k))
+}
+document.getElementById("sends").innerHTML = arraySends.join("<br />")  
+  
+//effect On
+let arrayEffectsOn = []
+for (let i = 1; i <= 8; i ++) {
+  for (let j = 1; j <= 8; j ++) {
+    arrayEffectsOn.push(effectOn(i, j))
+}}
+document.getElementById("effects-on").innerHTML = arrayEffectsOn.join("<br />")
+
+//effect Off
+let arrayEffectsOff = []
+for (let k = 1; k <= 8; k ++) {
+    arrayEffectsOff.push(effectOff(k))
+}
+document.getElementById("effects-off").innerHTML = arrayEffectsOff.join("<br />")
+  
+
+
+  
+</script>
